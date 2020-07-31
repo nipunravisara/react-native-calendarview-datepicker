@@ -6,5 +6,8 @@
   "repository": "https://github.com/RavisaraDev/react-native-calendar",
   "author": "ravisaradev",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "moment": "^2.27.0"
+  }
 }
