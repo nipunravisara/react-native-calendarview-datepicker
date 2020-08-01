@@ -1,6 +1,6 @@
 {
   "name": "react-native-calendarview-datepicker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "🌿 React-native date picker component ",
   "main": "index.js",
   "repository": {
@@ -33,9 +33,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.5",
     "prettier": "^2.0.5"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/RavisaraDev/react-native-calendarview-datepicker/issues"
