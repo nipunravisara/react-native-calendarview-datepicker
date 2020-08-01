@@ -1,13 +1,44 @@
 {
-  "name": "react-native-calendar-date-picker",
+  "name": "react-native-date-picker-calendar",
   "version": "0.0.1",
-  "description": "🌿React-native date picker component ",
+  "description": "🌿 React-native date picker component ",
   "main": "index.js",
-  "repository": "https://github.com/RavisaraDev/react-native-calendar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RavisaraDev/react-native-date-picker-calendar.git"
+  },
   "author": "ravisaradev",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "keywords": [
+    "react-native-date-picker-calendar",
+    "react-native-calendar",
+    "react-native-datepicker",
+    "react-native"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "moment": "^2.27.0"
-  }
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^2.0.0",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "prettier": "^2.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/RavisaraDev/react-native-date-picker-calendar/issues"
+  },
+  "homepage": "https://github.com/RavisaraDev/react-native-date-picker-calendar"
 }
