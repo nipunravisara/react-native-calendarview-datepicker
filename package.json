@@ -34,6 +34,9 @@
     "eslint-plugin-react": "^7.20.5",
     "prettier": "^2.0.5"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "bugs": {
     "url": "https://github.com/RavisaraDev/react-native-calendarview-datepicker/issues"
   },
