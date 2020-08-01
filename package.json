@@ -1,17 +1,17 @@
 {
-  "name": "react-native-date-picker-calendar",
+  "name": "react-native-datepicker-calendar",
   "version": "0.0.1",
   "description": "🌿 React-native date picker component ",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RavisaraDev/react-native-date-picker-calendar.git"
+    "url": "git+https://github.com/RavisaraDev/react-native-datepicker-calendar.git"
   },
   "author": "ravisaradev",
   "license": "MIT",
   "private": false,
   "keywords": [
-    "react-native-date-picker-calendar",
+    "react-native-datepicker-calendar",
     "react-native-calendar",
     "react-native-datepicker",
     "react-native"
@@ -38,7 +38,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
-    "url": "https://github.com/RavisaraDev/react-native-date-picker-calendar/issues"
+    "url": "https://github.com/RavisaraDev/react-native-datepicker-calendar/issues"
   },
-  "homepage": "https://github.com/RavisaraDev/react-native-date-picker-calendar"
+  "homepage": "https://github.com/RavisaraDev/react-native-datepicker-calendar"
 }
