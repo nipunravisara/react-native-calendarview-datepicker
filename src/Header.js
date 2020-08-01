@@ -1,24 +1,28 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import moment from 'moment';
 
-export const Header = ({value, header, headerStyle, month, setMonth}) => {
-    return header ? (
-        <View style={[styles.header]}>{header}</View>
-    ) : (
+export const Header = ({ date, customHeader, headerStyle, year, setYear, month, setMonth }) => {
+    return (
         <View
             style={[
                 styles.header,
-                {justifyContent: 'space-between', flexDirection: 'row'},
+                { justifyContent: 'space-between', flexDirection: 'row' },
                 headerStyle && headerStyle,
             ]}>
-            <TouchableOpacity style={styles.monthNavigator} onPress={() => setMonth(month - 1)}>
-                <Text style={styles.monthIndicator}>‹</Text>
-            </TouchableOpacity>
-            <Text style={styles.monthIndicator}>{moment().month(month).format('MMMM')}</Text>
-            <TouchableOpacity style={styles.monthNavigator} onPress={() => setMonth(month + 1)}>
-                <Text style={styles.monthIndicator}>›</Text>
-            </TouchableOpacity>
+            {customHeader ? (
+                <View style={[styles.header]}>{customHeader(date, month, year, setMonth, setYear)}</View>
+            ) : (
+                    <>
+                        <TouchableOpacity style={styles.monthNavigator} onPress={() => setMonth(month - 1)}>
+                            <Text style={styles.monthIndicator}>‹</Text>
+                        </TouchableOpacity>
+                        <Text style={styles.monthIndicator}>{moment().month(month).format('MMMM')}</Text>
+                        <TouchableOpacity style={styles.monthNavigator} onPress={() => setMonth(month + 1)}>
+                            <Text style={styles.monthIndicator}>›</Text>
+                        </TouchableOpacity>
+                    </>
+                )}
         </View>
     );
 };
