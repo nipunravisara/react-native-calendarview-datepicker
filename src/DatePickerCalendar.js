@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Modal, View, Text, TouchableOpacity } from 'react-native';
 import moment from 'moment';
 import { Header } from './Header';
 import { getCalendarDates } from './functions/getCalendarDates';
 import { WeekIndicator } from './WeekIndicator';
 
-const DatePickerCalendar = ({
-  date,
-  onChange,
-  fieldButtonStylesDateFormat,
-  fieldButtonStyles,
-  fieldButtonTextStyles,
-  customHeader,
-  headerStyle,
-  weekHeaderTextColor,
-  selectedDateHighlightColor,
-  selectedDateHighlightRadius,
-  datesColor,
-  selectedDateColor,
-}) => {
+  const DatePickerCalendar = ({
+     date,
+     onChange,
+     fieldButtonStylesDateFormat,
+     fieldButtonStyles,
+     fieldButtonTextStyles,
+     customHeader,
+     headerStyles,
+     weekHeaderTextColor,
+     selectedDateHighlightColor,
+     selectedDateHighlightRadius,
+     datesColor,
+     selectedDateColor,
+   }) => {
   const [month, setMonth] = useState(moment().clone().month());
   const [year, setYear] = useState(moment().clone().year());
   const [isOpen, setIsOpen] = useState(false);
@@ -27,58 +27,60 @@ const DatePickerCalendar = ({
 
   return (
       <>
-      <TouchableOpacity style={[styles.dateFieldContainer, fieldButtonStyles]} onPress={() => setIsOpen(!isOpen)}><Text style={[styles.dateFieldText, fieldButtonTextStyles]}>{moment(date).format(fieldButtonStylesDateFormat || "MMMM Do YYYY")}</Text></TouchableOpacity>
+        <TouchableOpacity style={[styles.dateFieldContainer, fieldButtonStyles]} onPress={() => setIsOpen(!isOpen)}><Text style={[styles.dateFieldText, fieldButtonTextStyles]}>{moment(date).format(fieldButtonStylesDateFormat || "MMMM Do YYYY")}</Text></TouchableOpacity>
         {isOpen && (
-            <TouchableOpacity style={styles.modalBackground} onPress={() => setIsOpen(!isOpen)}>
-              <View style={[styles.modal]}>
-                <Header
-                    date={date}
-                    customHeader={customHeader}
-                    headerStyle={headerStyle}
-                    year={year}
-                    setYear={setYear}
-                    month={month}
-                    setMonth={setMonth}
-                />
-                <WeekIndicator weekHeaderTextColor={weekHeaderTextColor} />
-                <View style={{ width: '100%' }}>
-                  {calendar.map((week, index) => (
-                      <View style={[styles.weekContainer]} key={`${week + index}`}>
-                        {week.map((day) => (
-                            <TouchableOpacity
-                                style={[
-                                  styles.dateContainer,
-                                  moment(date).isSame(moment(day.date), 'day')
-                                      ? {
-                                        backgroundColor: selectedDateHighlightColor || '#00A3FF',
-                                        borderRadius:
-                                            selectedDateHighlightRadius === 0
-                                                ? 0
-                                                : selectedDateHighlightRadius || 100,
-                                      }
-                                      : { backgroundColor: 'transparent' },
-                                ]}
-                                key={day.date}
-                                onPress={() => {
-                                  onChange(moment(day.date).endOf('day'));
-                                  setIsOpen(!isOpen)
-                                }}>
-                              <Text
+            <Modal animationType={"fade"} transparent={true} presentationStyle={'overFullScreen'} visible = {isOpen} onRequestClose = {() => setIsOpen(!isOpen) }>
+              <TouchableOpacity style={styles.modalBackground} onPress={() => setIsOpen(!isOpen)}>
+                <View style={[styles.modal]}>
+                  <Header
+                      date={date}
+                      customHeader={customHeader}
+                      headerStyles={headerStyles}
+                      year={year}
+                      setYear={setYear}
+                      month={month}
+                      setMonth={setMonth}
+                  />
+                  <WeekIndicator weekHeaderTextColor={weekHeaderTextColor} />
+                  <View style={{ width: '100%' }}>
+                    {calendar.map((week, index) => (
+                        <View style={[styles.weekContainer]} key={`${week + index}`}>
+                          {week.map((day) => (
+                              <TouchableOpacity
                                   style={[
-                                    styles.dateText,
+                                    styles.dateContainer,
                                     moment(date).isSame(moment(day.date), 'day')
-                                        ? { color: selectedDateColor || 'white' }
-                                        : { color: datesColor || 'black' },
-                                  ]}>
-                                {`0${moment(day.date).date()}`.slice(-2)}
-                              </Text>
-                            </TouchableOpacity>
-                        ))}
-                      </View>
-                  ))}
+                                        ? {
+                                          backgroundColor: selectedDateHighlightColor || '#00A3FF',
+                                          borderRadius:
+                                              selectedDateHighlightRadius === 0
+                                                  ? 0
+                                                  : selectedDateHighlightRadius || 100,
+                                        }
+                                        : { backgroundColor: 'transparent' },
+                                  ]}
+                                  key={day.date}
+                                  onPress={() => {
+                                    onChange(moment(day.date).endOf('day'));
+                                    setIsOpen(!isOpen)
+                                  }}>
+                                <Text
+                                    style={[
+                                      styles.dateText,
+                                      moment(date).isSame(moment(day.date), 'day')
+                                          ? { color: selectedDateColor || 'white' }
+                                          : { color: datesColor || 'black' },
+                                    ]}>
+                                  {`0${moment(day.date).date()}`.slice(-2)}
+                                </Text>
+                              </TouchableOpacity>
+                          ))}
+                        </View>
+                    ))}
+                  </View>
                 </View>
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </Modal>
         )}
       </>
 
@@ -137,7 +139,6 @@ const styles = StyleSheet.create({
 
   modalBackground: {
     backgroundColor: '#2222225c',
-    position: 'absolute',
     width: '100%',
     height: '100%',
     alignItems: 'center',
