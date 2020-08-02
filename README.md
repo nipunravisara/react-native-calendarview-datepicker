@@ -1,7 +1,6 @@
 # React-native-calendarview-datepicker
-![GitHub top language](https://img.shields.io/github/languages/top/RavisaraDev/react-native-calendarview-datepicker?color=yellow&style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/RavisaraDev/react-native-calendarview-datepicker?color=greenlabel=size&style=flat-square) ![GitHub All Releases](https://img.shields.io/github/downloads/RavisaraDev/react-native-calendarview-datepicker/total?color=%2300A3FF&logo=Github&style=flat-square) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/RavisaraDev/react-native-calendarview-datepicker?color=%23C678DD&label=version&style=flat-square)
-
-![Encipher screenshot](./assets/banner.png?raw=true "Optional Title")
+![GitHub top language](https://img.shields.io/github/languages/top/RavisaraDev/react-native-calendarview-datepicker?color=yellow&style=flat-square) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/RavisaraDev/react-native-calendarview-datepicker?color=greenlabel=size&style=flat-square)  ![npm](https://img.shields.io/npm/dw/react-native-calendarview-datepicker?label=npm%20downloads&logo=npm&style=flat-square) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/RavisaraDev/react-native-calendarview-datepicker?color=%23C678DD&label=version&style=flat-square&logo=npm&) ![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2FRavisaraDev%2Freact-native-calendarview-datepicker)
+![banner-image](./assets/banner.png?raw=true "Optional Title")
 
 📦 Installation
 ----
