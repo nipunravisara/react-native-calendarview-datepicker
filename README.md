@@ -38,17 +38,20 @@ const App = () => {
 📑 API Reference
 ----
 
-| Props| Type | Description | Required
-| -------- | ------- | -------- | -------- |
-| date | ```Moment``` | ```moment()``` Moment date object | True
-| onChange |```Function```| Callback triggered on date select | True
-| customHeader |```Function```| Your passoword (To decrypt needs same passoword used to encrypt) | False
-| weekHeaderTextColor | ```String``` | Week days names text color | False
-| selectedDateHighlightColor | ```String``` | Selected date highlight marker color | False
-| selectedDateHighlightRadius | ```Number``` | Selected date highlight marker radius | False
-| datesColor | ```String``` | Calendar date color | False
-| selectedDateColor|  ```String``` | Selected calendar date color | False
-
+| Props| Type | Description 
+| -------- | ------- | -------- |
+| date | ```Moment``` | ```moment()``` Moment date object (Required)
+| onChange |```Function```| Callback triggered on date select (Required)
+| headerStyles | ```Object``` | Header wrapper styles
+| customHeader | ```Function``` | Function should return a component. Args: ```(date, month, year, setMonth, setYear)```
+| weekHeaderTextColor | ```String``` | Week days names text color
+| selectedDateHighlightColor | ```String``` | Selected date highlight marker color
+| selectedDateHighlightRadius | ```Number``` | Selected date highlight marker radius
+| datesColor | ```String``` | Calendar date color
+| selectedDateColor|  ```String``` | Selected calendar date color
+| fieldButtonStylesDateFormat | ```String``` | Selected date showing format. [Available formats](https://momentjs.com/docs/#/parsing/string-format/)
+| fieldButtonStyles | ```Object``` | Field button styles
+| fieldButtonTextStyles | ```Object``` | Field button text styles
 
 
 🗞 License
