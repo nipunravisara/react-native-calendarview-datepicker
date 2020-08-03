@@ -39,8 +39,11 @@ const App = () => {
 
 | Props| Type | Description 
 | -------- | ------- | -------- |
-| date | ```Moment``` | ```moment()``` Moment date object (Required)
+| date | ```Moment``` | If your need to show placeholder on initial load just pass ```undefined```, else for default value pass ```moment()``` object
 | onChange |```Function```| Callback triggered on date select (Required)
+| placeholder | ```String``` | Custom placeholder text
+| placeholderStyles | ```Object``` | Placeholder text styles 
+| modalBackgroundColor | ```String``` | Calendar modal background color
 | headerStyles | ```Object``` | Header wrapper styles
 | customHeader | ```Function``` | Function should return a component. Args: ```(date, month, year, setMonth, setYear)```
 | weekHeaderTextColor | ```String``` | Week days names text color
@@ -48,7 +51,7 @@ const App = () => {
 | selectedDateHighlightRadius | ```Number``` | Selected date highlight marker radius
 | datesColor | ```String``` | Calendar date color
 | selectedDateColor|  ```String``` | Selected calendar date color
-| fieldButtonStylesDateFormat | ```String``` | Selected date showing format. [Available formats](https://momentjs.com/docs/#/parsing/string-format/)
+| fieldButtonStylesDateFormat | ```String``` | Selected date showing format. [Available formats](https://momentjs.com/docs/#/displaying/format/)
 | fieldButtonStyles | ```Object``` | Field button styles
 | fieldButtonTextStyles | ```Object``` | Field button text styles
 
