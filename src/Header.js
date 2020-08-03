@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import moment from 'moment';
 
-export const Header = ({ date, customHeader, headerStyle, year, setYear, month, setMonth }) => {
+export const Header = ({ date, customHeader, headerStyles, year, setYear, month, setMonth }) => {
     return (
         <View
             style={[
                 styles.header,
                 { justifyContent: 'space-between', flexDirection: 'row' },
-                headerStyle && headerStyle,
+                headerStyles && headerStyles,
             ]}>
             {customHeader ? (
                 <View style={[styles.header]}>{customHeader(date, month, year, setMonth, setYear)}</View>
