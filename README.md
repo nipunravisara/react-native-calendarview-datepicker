@@ -15,10 +15,18 @@ or
 yarn add react-native-calendarview-datepicker
 ``` 
 
+📺 Preview
+----
+
+![banner-image](./assets/preview-default.gif?raw=true "Optional Title") ![banner-image](./assets/preview-customized.gif?raw=true "Optional Title")
+
+
 🚀 Basic Usage
 ----
 
-You can simply add date-picker as follows. It shows minimal default calendar picker. But you can customize as you wish.
+### Default
+
+You can simply add date-picker as follows. It shows minimal default calendar. But you can customize as you wish.
 ```javascript
 import DatePickerCalendar from 'react-native-calendarview-datepicker';
 import Moment from 'moment';
@@ -33,6 +41,84 @@ const App = () => {
   );
 };
 ```
+
+### Customized
+
+You can have full control of calendar picker. Pass your own calendar header and condition styles for darkmode.
+```javascript
+import DatePickerCalendar from 'react-native-calendarview-datepicker';
+import Moment from 'moment';
+
+...
+
+const App = () => {
+  const [date, setDate] = useState(moment());
+  
+  //Custom datepicker header
+const customHeader = (date, month, year, setMonth, setYear) => {
+    return (
+        <View style={{flexDirection: "row", justifyContent: 'space-between'}}>
+            <View>
+                <View>
+                    <Text style={{color: "#fff", fontSize: 18, opacity: 0.5, marginBottom: 4}}>{year}</Text>
+                </View>
+                <View>
+                    <Text style={{
+                        color: "#fff",
+                        fontSize: 25,
+                        fontWeight: 'bold'
+                    }}>{moment(date).format("MMMM Do YYYY")}</Text>
+                </View>
+            </View>
+            <View style={{flexDirection: "row", alignItems: 'center'}}>
+                <TouchableOpacity style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginRight: 10,
+                    height: 40,
+                    width: 40,
+                    backgroundColor: "#155B3C",
+                    borderRadius: 100
+                }} onPress={() => setMonth(month - 1)}>
+                    <Text style={{color: "#18D183", fontSize: 30, marginBottom: 5}}>{'‹'}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: 40,
+                    width: 40,
+                    backgroundColor: "#155B3C",
+                    borderRadius: 100
+                }} onPress={() => setMonth(month + 1)}>
+                    <Text style={{color: "#18D183", fontSize: 30, marginBottom: 5}}>{'›'}</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
+}
+
+  return (
+        <DatePickerCalendar
+            date={date}
+            onChange={(selectedDate) => setDate(selectedDate)}
+            placeholder="Select date"
+            placeholderStyles={{color: "#04e37d"}}
+            fieldButtonStylesDateFormat="MMM Do YY"
+            fieldButtonStyles={{width: '95%', backgroundColor: "#1D323E", borderRadius: 12, borderWidth: 2, borderColor: "#18D183", paddingLeft: 20}}
+            fieldButtonTextStyles={{color: "#18D183"}}
+            modalBackgroundColor={"#1D323E"}
+            weekHeaderTextColor={"#18D183"}
+            datesColor={"#fff"}
+            selectedDateColor={"#1D323E"}
+            selectedDateHighlightColor={"#18D183"}
+            selectedDateHighlightRadius={5}
+            customHeader={(date, month, year, setMonth, setYear) => customHeader(date, month, year, setMonth, setYear)}
+            headerStyles={{padding: 0}}
+        />
+  );
+};
+```
+
 
 📑 API Reference
 ----
