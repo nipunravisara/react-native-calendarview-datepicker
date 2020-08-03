@@ -13,6 +13,7 @@ const DatePickerCalendar = ({
                                 fieldButtonStylesDateFormat,
                                 fieldButtonStyles,
                                 fieldButtonTextStyles,
+                                modalBackgroundColor,
                                 customHeader,
                                 headerStyles,
                                 weekHeaderTextColor,
@@ -39,7 +40,7 @@ const DatePickerCalendar = ({
             {isOpen && (
                 <Modal animationType={"fade"} transparent={true} presentationStyle={'overFullScreen'} visible = {isOpen} onRequestClose = {() => setIsOpen(!isOpen) }>
                     <TouchableOpacity style={styles.modalBackground} onPress={() => setIsOpen(!isOpen)}>
-                        <View style={[styles.modal]}>
+                        <View style={[styles.modal, modalBackgroundColor && {backgroundColor: modalBackgroundColor}]}>
                             <Header
                                 date={date}
                                 customHeader={customHeader}
