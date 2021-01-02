@@ -1,6 +1,6 @@
 {
   "name": "react-native-calendarview-datepicker",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "🌿 React-native date picker component ",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,8 @@
     "react-native-calendarview-datepicker",
     "react-native-calendar",
     "react-native-datepicker",
-    "react-native"
+    "react-native",
+    "date-picker"
   ],
   "scripts": {
     "test": "jest",
