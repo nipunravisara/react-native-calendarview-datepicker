@@ -31,7 +31,7 @@ const DatePickerCalendar = ({
   return (
       <>
       <TouchableOpacity style={[styles.dateFieldContainer, fieldButtonStyles]} onPress={() => setIsOpen(!isOpen)}>
-        {date === undefined ? (
+        {placeholder !== undefined && date === null ? (
             <Text style={[styles.placeholder, placeholderStyles]}>{placeholder || 'Select date'}</Text>
         ) : (
             <Text style={[styles.dateFieldText, fieldButtonTextStyles]}>{moment(date).format(fieldButtonStylesDateFormat || "MMMM Do YYYY")}</Text>
